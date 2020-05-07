@@ -1,0 +1,14 @@
+
+# show animation
+animate -delay 10 test*png
+
+# convert to ProRes
+ffmpeg -framerate 60 -i test%03d.png  -c:v prores  output.mov
+
+# create animated GIF (has artifacts at top)
+ffmpeg -framerate 60 -i test%03d.png  -vf scale=720:405 -f gif anim.gif
+
+# create animated GIF
+convert -resize 720 -delay 2 -loop 0 test*png im.gif
+
+

@@ -1,6 +1,18 @@
 # raytrace
 Python raytracer
 
+![animation](https://github.com/mdoege/raytrace/raw/master/im.gif "animation")
+
+## Fork info
+
+* rt3: add ambient to shadows
+* rt4: allow more than one light
+* rt5: add a little bumpmapping
+* rt6: modify for animation
+* anim: animate the yellow and blue spheres
+
+## Original README
+
 The speed difference is explained at http://www.excamera.com/sphinx/article-ray.html
 
 Updated for Python 3.x.
@@ -16,3 +28,4 @@ pip install pillow
 ```
 pip install numpy
 ```
+

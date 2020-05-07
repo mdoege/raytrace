@@ -40,7 +40,7 @@ class vec3():
         return r
 rgb = vec3
 
-(w, h) = (400, 300)         # Screen size
+(w, h) = (1600, 1200)         # Screen size
 L = vec3(5, 5, -10)        # Point light position
 E = vec3(0, 0.35, -1)     # Eye position
 FARAWAY = 1.0e39            # an implausibly huge distance
@@ -98,11 +98,12 @@ class Sphere:
         seelight = light_distances[scene.index(self)] == light_nearest
 
         # Ambient
-        color = rgb(0.05, 0.05, 0.05)
+        color = rgb(0, 0, 0)
 
         # Lambert shading (diffuse)
         lv = np.maximum(N.dot(toL), 0)
         color += self.diffusecolor(M) * lv * seelight
+        color += self.diffusecolor(M) * .1 * (1 - seelight)
 
         # Reflection
         if bounce < 2:
